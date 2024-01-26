@@ -1,0 +1,113 @@
+@import "react-slideshow-image/dist/styles.css";
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.active {
+  border: 0px solid 'white';
+}
+
+.active_box {
+  border: 0px solid 'white';
+}
+
+.shop-the-collection-button {
+  position: absolute;
+  bottom: 12vh;
+  left: 50px;
+  padding: 15px 30px; /* Use a single 'padding' property with values for top/bottom and left/right */
+  background-color: white;
+  border: 1px solid white; 
+  border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.collection-name{
+  bottom: 28vh;
+}
+
+.collection-description{
+  bottom: 25vh;
+}
+
+button.nav.default-nav[data-type="prev"] {
+    /* background-color: #007bff; 
+    color: #fff;  */
+    bottom: 10vh;
+    left: 85%
+  }
+  
+  /* Custom styles for the next button */
+  button.nav.default-nav[data-type="next"] {
+    /* background-color: #007bff; 
+    color: #fff;  */
+    bottom: 10vh;
+    right: 5%
+  }
+
+  /* Custom styles for the previous button's arrow */
+button.nav.default-nav[data-type="prev"] svg {
+    width: 15px; /* Set the width to your desired value */
+    height: 15px; /* Set the height to your desired value */
+  }
+
+  /* Custom styles for the next button's arrow */
+button.nav.default-nav[data-type="next"] svg {
+    width: 15px; /* Set the width to your desired value */
+    height: 15px; /* Set the height to your desired value */
+  }
+  
+
+  button.nav.default-nav {
+    /* background-color: #007bff; 
+    color: #fff;  */
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 768px) {
+    .shop-the-collection-button {
+      right: 25vw;
+    }
+
+    .collection-name{
+      top: 55vh;
+    }
+    
+    .collection-description{
+      top: 67vh;
+    }
+
+    .slide-container h2 {
+      font-size: 30px; /* Adjust the font size for h2 elements */
+      bottom: 100px; /* Adjust the position of h2 elements */
+    }
+  
+    .slide-container button {
+      font-size: 16px; /* Adjust the font size for the button */
+      bottom: 40px; /* Adjust the position of the button */
+    }
+  
+    /* Adjust the positions of the previous and next buttons */
+    button.nav.default-nav[data-type="prev"] {
+      bottom: 20px; /* Adjust the bottom position of the previous button */
+      left: 10px; /* Adjust the left position of the previous button */
+    }
+  
+    button.nav.default-nav[data-type="next"] {
+      bottom: 20px; /* Adjust the bottom position of the next button */
+      right: 10px; /* Adjust the right position of the next button */
+    }
+
+    .shop-the-collection-button{
+      left: 26%; /* Adjust the left position for mobile */
+      padding: 10px 20px; /* Adjust padding for mobile */
+      font-size: 14px; /* Adjust font size for mobile */
+    }
+  }
+  

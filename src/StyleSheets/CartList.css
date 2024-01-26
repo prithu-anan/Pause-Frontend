@@ -1,0 +1,53 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.cart_heading {
+    display: flex;
+    font-family: 'Lucida Console';
+    font-size: 20px;
+    margin-left: 10vw;
+    margin-bottom: 20px;
+}
+
+.cart_heading_product {
+    flex: 1;
+    text-align: left;
+}
+
+.cart_heading_quantity {
+    flex: 1;
+    text-align: right;
+}
+
+.cart_heading_total {
+    flex: 1;
+    text-align: right;
+}
+
+.table_rule {
+    border-bottom: 1px solid #000000;
+    margin-left: 10vw;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .cart_heading_quantity {
+        flex: 1;
+        text-align: right;
+        margin-left: 80px;
+    }
+    
+    .cart_heading_total {
+        flex: 1;
+        text-align: right;
+        margin-left: 20px;
+    }
+
+    .table_rule {
+        border-bottom: 1px solid #000000;
+        margin-left: 10vw;
+        margin-bottom: 20px;
+        width: 75vw;
+    }
+}

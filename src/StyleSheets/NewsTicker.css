@@ -1,0 +1,32 @@
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.news-ticker {
+    background-color: #bad9f5;
+    color: #000000;
+    padding: 15px 0;
+    overflow: hidden;
+  }
+  
+  .ticker-text {
+    font-family: 'Roboto Mono', monospace;; /* Change the font family here */
+    font-size: 18px; /* Change the font size here */
+    font-weight: bold; /* Make the text bold */
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    display: inline-block; /* Display text inline-block */
+  }
+  
+  .ticker-text span {
+    padding: 0 100px; /* Add spacing between news items */
+  }
+  
+  @keyframes ticker {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

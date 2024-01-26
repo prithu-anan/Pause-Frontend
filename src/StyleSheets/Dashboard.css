@@ -1,0 +1,25 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.charts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: '100vw'
+}
+
+.order-table{
+    width: '100vw';
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    
+}

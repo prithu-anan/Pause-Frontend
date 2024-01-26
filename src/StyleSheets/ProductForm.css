@@ -1,0 +1,57 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.form-container{
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+.button-container{
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin-top: 2; 
+    margin-left: 48%
+}
+
+.color_selector {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.color_selector_circle {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid transparent; /* Set the border to transparent initially */
+}
+
+.color_selector_circle_icon {
+    width: 100%;
+    height: 100%;
+}
+
+.active_circle {
+    border: 2px solid #e77600;
+}
+
+@media (max-width: 768px) {
+    .form-container{
+        width: 70%;
+    }
+    .button-container{
+        margin-left: 35vw;
+    }
+}

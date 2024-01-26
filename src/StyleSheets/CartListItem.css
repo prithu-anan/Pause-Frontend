@@ -1,0 +1,85 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.cart_list_item {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10vw;
+    margin-bottom: 5vh;
+    width: 55vw;
+}
+
+.cart_list_product {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    width: 200px;
+}
+
+.cart_list_image_container {
+    width: 100px;
+    height: 120px;
+}
+
+.cart_list_image {
+    width: 100px;
+}
+
+.cart_list_product_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.cart_list_product_name {
+    font-family: 'Lucida Console';
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart_list_product_price {
+    font-family: 'Lucida Console';
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.cart_list_product_color {
+    font-family: 'Lucida Console';
+    font-size: 13px;
+}
+
+.cart_list_quantity {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.cart_list_quantity_input {
+    width: 90px;
+}
+
+.cart_list_total {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    width: 90px;
+}
+
+@media (max-width:768px){
+    .cart_list_total {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        margin-left: 20px;
+        width: 90px;
+    }
+}

@@ -1,0 +1,25 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.checkout_form {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: left;
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* background-color: #f2f2f2; */
+}
+
+.form_label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
