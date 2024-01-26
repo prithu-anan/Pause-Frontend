@@ -28,7 +28,7 @@ export default function RenderGroup(props) {
     };
 
     fetchData();
-  }, []);
+  });
 
   const options = props.collections?.map((option) => {
     const firstLetter = option?.name[0].toUpperCase();
