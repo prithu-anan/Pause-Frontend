@@ -233,6 +233,7 @@ function ImageViewer(props) {
                             },
                         }}
                     />
+                    {/* <img src={img} alt="" width={1400} height={2000}/> */}
                 </Box>
             </Box>
             <Box className="right">
