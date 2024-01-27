@@ -12,20 +12,21 @@ import { getPendingOrdersById } from '../../api-helpers';
 import { Link, useParams } from 'react-router-dom';
 
 const OrderDetailsPage = () => {
+    const id = useParams().id;
     const [order, setOrder] = React.useState([])
     const parsedData = JSON.parse(localStorage.getItem('admin'));
 
     React.useEffect(() => {
         const fetchOrders = async () => {
-            const res = await getPendingOrdersById(useParams().id);
+            const res = await getPendingOrdersById(id);
             setOrder(res?.find(item => item?._id === id))            
         }
         fetchOrders()
-    })
+    }, [id])
 
-    // React.useEffect(() => {
-    //     // console.log(order);
-    // }, [order]);
+    React.useEffect(() => {
+        // console.log(order);
+    }, [order]);
 
   return (
     <Container maxWidth="md" sx={{ marginTop: 4 }}>
