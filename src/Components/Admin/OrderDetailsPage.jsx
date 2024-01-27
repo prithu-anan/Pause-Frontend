@@ -22,7 +22,7 @@ const OrderDetailsPage = () => {
             setOrder(res?.find(item => item?._id === id))            
         }
         fetchOrders()
-    })
+    },[id])
 
     // React.useEffect(() => {
     //     // console.log(order);
