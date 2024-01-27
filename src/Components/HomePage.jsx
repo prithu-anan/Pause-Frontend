@@ -18,14 +18,13 @@ const HomePage = () => {
           getBestCollection(),
         ]);
 
-        setCollections([featured, latest, best]);
+        setCollections([latest, featured, best]);
 
         const [featuredProducts, latestProducts, bestProducts] = await Promise.all([
           getProductByCollection(featured?._id),
           getProductByCollection(latest?._id),
           getProductByCollection(best?._id),
         ]);
-
 
         //change the order here
         setProducts([latestProducts, featuredProducts, bestProducts]);
