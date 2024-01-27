@@ -19,7 +19,7 @@ const OrderDetailsPage = () => {
     React.useEffect(() => {
         const fetchOrders = async () => {
             const res = await getPendingOrdersById(id);
-            setOrder(res?.find(item => item?._id === id))            
+            setOrder(res)            
         }
         fetchOrders()
     }, [id])
