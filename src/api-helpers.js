@@ -200,6 +200,19 @@ export const getPendingOrders = async() => {
     return res.data.pendings;
 }
 
+export const getPendingOrdersById = async(id) => {
+    let res;
+
+    try{
+        res = await axios.get(`admin/order/pending/${id}`)
+    }catch(err){
+        console.log(err);
+    }
+
+    // console.log(res.data.pendings) ;
+    return res.data.pending;
+}
+
 export const selectColor = async() => {
     let res;
 

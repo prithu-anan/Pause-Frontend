@@ -8,21 +8,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Button from '@mui/material/Button';
-import { getPendingOrders } from '../../api-helpers';
+import { getPendingOrdersById } from '../../api-helpers';
 import { Link, useParams } from 'react-router-dom';
 
 const OrderDetailsPage = () => {
-    const id = useParams().id;
     const [order, setOrder] = React.useState([])
     const parsedData = JSON.parse(localStorage.getItem('admin'));
 
     React.useEffect(() => {
         const fetchOrders = async () => {
-            const res = await getPendingOrders();
+            const res = await getPendingOrdersById(useParams().id);
             setOrder(res?.find(item => item?._id === id))            
         }
         fetchOrders()
-    },[id])
+    })
 
     // React.useEffect(() => {
     //     // console.log(order);
