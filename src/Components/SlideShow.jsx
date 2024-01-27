@@ -33,10 +33,10 @@ const SlideShow = (props) => {
             <div style={{ position: 'relative' }}>
               <img style={{ width: '100%', height: '50em'}} src={props?.landscape?.length === 3 ? props?.landscape?.[index] : props?.landscape?.[0]} alt="" />
               <h2 className='collection-name' style={{ position: 'absolute', left: '50px', zIndex: 1, color: 'white', fontSize: '40px' }}>
-                {props.name}
+                {props?.name}
               </h2>
               <h2 className='collection-description' style={{ position: 'absolute', left: '50px', zIndex: 1, color: 'white', fontSize: '20px' }}>
-                {props.description}
+                {props?.description}
               </h2>
               <Link to={`/collection/${props._id}`}>
                 <button

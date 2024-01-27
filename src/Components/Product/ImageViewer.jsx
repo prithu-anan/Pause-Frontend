@@ -182,22 +182,19 @@ function ImageViewer(props) {
             // console.log('Product added to the cart:', updatedCart);
             alert("Product added to the cart");
             window.location.reload();
-        }
+        }        
+    };
 
-        
-        
-      };
-
-      const [drawerOpen, setDrawerOpen] = useState(false);
-      
+    const [drawerOpen, setDrawerOpen] = useState(false);
     
-      const handleDrawerOpen = () => {
+
+    const handleDrawerOpen = () => {
         setDrawerOpen(true);
-      };
-    
-      const handleDrawerClose = () => {
+    };
+
+    const handleDrawerClose = () => {
         setDrawerOpen(false);
-      };
+    };
 
     return (
         <Box className="container">
