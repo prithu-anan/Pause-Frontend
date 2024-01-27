@@ -24,9 +24,9 @@ const OrderDetailsPage = () => {
         fetchOrders()
     })
 
-    React.useEffect(() => {
-        // console.log(order);
-    }, [order]);
+    // React.useEffect(() => {
+    //     // console.log(order);
+    // }, [order]);
 
   return (
     <Container maxWidth="md" sx={{ marginTop: 4 }}>
