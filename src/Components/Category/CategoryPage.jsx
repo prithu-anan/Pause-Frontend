@@ -41,7 +41,7 @@ const CategoryPage = () => {
             }
         }
         fetchData();
-    }, [])
+    },[])
 
     React.useEffect(() => {
         if(selectedProduct !== null) setDisplayedProducts([selectedProduct]);
@@ -65,19 +65,20 @@ const CategoryPage = () => {
         fetchData();
     }, [selectedColors, selectedSizes, sortingCriteria])
 
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    // const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    useEffect(() => {
-      const updateScreenWidth = () => {
-        setScreenWidth(window.innerWidth);
-      };
+    // useEffect(() => {
+    //   const updateScreenWidth = () => {
+    //     setScreenWidth(window.innerWidth);
+    //   };
   
-      window.addEventListener('resize', updateScreenWidth);
+    //   window.addEventListener('resize', updateScreenWidth);
   
-      return () => {
-        window.removeEventListener('resize', updateScreenWidth);
-      };
-    }, []);
+    //   return () => {
+    //     window.removeEventListener('resize', updateScreenWidth);
+    //   };
+
+    // }, []);
     
   return (
     <Box className='collection_page'>
@@ -94,8 +95,8 @@ const CategoryPage = () => {
             display="flex"
             justifyContent="center" 
             alignItems="center" 
-            mt={screenWidth > 768 ? '3vh' : '0vh'} 
-            mb={screenWidth > 768 ? '0vh' : '3vh'}
+            mt={'3vh'} 
+            mb={'3vh'}
          >
             <RenderGroup 
                 products={products} 
