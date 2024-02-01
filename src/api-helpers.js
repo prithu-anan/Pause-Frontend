@@ -238,6 +238,19 @@ export const addProduct = async(product) => {
     return res.data;
 }
 
+export const editProduct = async(id, product) => {
+    let res;
+
+    try{
+        res = await axios.patch(`admin/product/${id}`, product)
+    }catch(err){
+        console.log(err);
+    }
+
+    // console.log(res.data);
+    return res.data;
+}
+
 export const addCollection = async(collection) => {
     let res;
 

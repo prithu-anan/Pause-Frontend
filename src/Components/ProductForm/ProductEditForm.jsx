@@ -12,7 +12,7 @@ import {
   Avatar,
 } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import { addProduct, getProductById, selectColor } from '../../api-helpers';
+import { editProduct, getProductById, selectColor } from '../../api-helpers';
 import {
   ref,
   uploadBytes,
@@ -264,7 +264,7 @@ const ProductEditForm = () => {
   
     // Assuming addProduct returns a Promise
     try {
-      await addProduct(formData);
+      await editProduct(id, formData);
       // Reload the window after successful execution of addProduct
       alert("Product Updated Successfully");
       window.location.reload();
