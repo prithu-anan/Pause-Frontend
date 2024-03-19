@@ -171,8 +171,8 @@ function ResponsiveAppBar() {
           
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', marginBottom: 15}}}>
-            <CollectionDrawer scrolling={scrolling}/>
-            <CategoryDrawer scrolling={scrolling}/>
+            <CollectionDrawer/>
+            <CategoryDrawer/>
             
             <Button style={{color: scrolling? 'white' : 'black', marginTop:16, fontFamily: "'Roboto Mono', monospace"}} component={RRLink} to="/category">            
               Products            
