@@ -26,6 +26,7 @@ import Badge from '@mui/material/Badge';
 // const pages = ['Products', 'About Us'];
 const settings = [ 'Account', 'Dashboard', 'Logout'];
 
+
 function ResponsiveAppBar() {
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
   const [cart, setCart] = React.useState(null);
@@ -48,6 +49,24 @@ function ResponsiveAppBar() {
     };
 
     updateCart();
+  }, []);
+
+  const [scrolling, setScrolling] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
 
@@ -93,51 +112,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: 'white', padding: '5px'}} elevation={0}>
+    <AppBar position="sticky" sx={{ backgroundColor: 'rgba(255, 255, 255, 0)', padding: '5px'}} elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color:'black' }} /> */}
-          {
-            screenWidth > 768 && (
-              <IconButton href='/' sx={{ p: 2 }}> 
-                <img src="/pause.png"
-                  alt="" 
-                  height="35px" 
-                  width="80px" 
-                />
-              </IconButton>
-            )
-          }
-          {/* <span>
-              <a 
-              component="a"
-              href="/"              
-              >
-                <img src="pause.png"
-                  alt="" 
-                  height="35px" 
-                  width="80px"                   
-                />
-              </a>
-          </span> */}
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'black',
-            //   color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            PAUSEBD
-          </Typography> */}
+          
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
             <IconButton
@@ -147,7 +125,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
             //   color="inherit"
-                color='black'
+              color='black'
             >
               <MenuIcon />
             </IconButton>
@@ -173,7 +151,7 @@ function ResponsiveAppBar() {
               <CollectionDrawer />
               <CategoryDrawer />
               {/* <ProductDrawer /> */}
-              <Button style={{ color:'#000000', margin: 18 }} component={RRLink} to="/category">            
+              <Button style={{ color:'#000000', margin: 18, fontFamily: "'Roboto Mono', monospace" }} component={RRLink} to="/category">            
                 Products            
               </Button>
             </Menu>
@@ -181,7 +159,7 @@ function ResponsiveAppBar() {
 
           {
             screenWidth <= 768 && (
-              <IconButton href='/' sx={{ mr: 7 }}>
+              <IconButton href='/' sx={{ mr: 4 }}>
                 <img src="/pause.png"
                   alt="" 
                   height="35px" 
@@ -191,34 +169,27 @@ function ResponsiveAppBar() {
             )
           }
           
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-            //   color: 'inherit',
-                color: 'black',
-              textDecoration: 'none',
-            }}
-          >
-            PAUSEBD
-          </Typography> */}
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', marginBottom: 15}}}>
-            <CollectionDrawer />
-            <CategoryDrawer />
-            {/* <ProductDrawer /> */}
-            <Button style={{color:'#000000', marginTop:16}} component={RRLink} to="/category">            
+            <CollectionDrawer scrolling={scrolling}/>
+            <CategoryDrawer scrolling={scrolling}/>
+            
+            <Button style={{color: scrolling? 'white' : 'black', marginTop:16, fontFamily: "'Roboto Mono', monospace"}} component={RRLink} to="/category">            
               Products            
             </Button>
           </Box>
+
+          {
+            screenWidth > 768 && (
+              <IconButton href='/' sx={{ p: 2, mr: 70 }}> 
+                <img src="/pause.png"
+                  alt="" 
+                  height="35px" 
+                  width="80px" 
+                />
+              </IconButton>
+            )
+          }
 
           <Box sx={{ flexGrow: 0, display: { xs: 'flex' } }}>
             
@@ -226,13 +197,13 @@ function ResponsiveAppBar() {
             cart !== null ? (
               <Badge color="primary" overlap="circular" variant="dot">
                 <IconButton href='/cart' sx={{ p: 2 }}> 
-                  <ShoppingBagOutlinedIcon sx={{ color: 'black' }} />
+                  <ShoppingBagOutlinedIcon sx={{ color: scrolling? 'white' : 'black' }} />
                 </IconButton>
               </Badge>
             )
             : (
               <IconButton href='/cart' sx={{ p: 2 }}> 
-                <ShoppingBagOutlinedIcon sx={{ color: 'black' }} />
+                <ShoppingBagOutlinedIcon sx={{ color: scrolling? 'white' : 'black' }} />
               </IconButton>
             )
           }

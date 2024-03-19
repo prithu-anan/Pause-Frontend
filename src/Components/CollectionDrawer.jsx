@@ -53,6 +53,24 @@ export default function CollectionDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
+  const [scrolling, setScrolling] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'bottom' ? 'auto' : 350 }}
@@ -60,7 +78,7 @@ export default function CollectionDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Typography variant="h4" component="div" sx={{ p: 2, textAlign: 'center', fontFamily: "'Roboto Mono' monospace", fontWeight: 'bold', fontSize: '30px' }}>
+      <Typography variant="h4" component="div" sx={{ p: 2, textAlign: 'center', fontFamily: "'Roboto Mono', monospace", fontWeight: 'bold', fontSize: '30px' }}>
         Collections
       </Typography>
       <List>
@@ -94,7 +112,7 @@ export default function CollectionDrawer() {
     <Box mt={2} ml={2}>
       {[(screenWidth > 768) ? 'left' : 'bottom'].map((anchor, index) => (
         <React.Fragment key={index}>
-          <Button style={{color:'#000000'}} onClick={toggleDrawer(anchor, true)}>            
+          <Button style={{color:(scrolling && screenWidth > 768)? 'white' : 'black', fontFamily: "'Roboto Mono', monospace"}} onClick={toggleDrawer(anchor, true)}>            
             Collections            
           </Button>
           <Drawer

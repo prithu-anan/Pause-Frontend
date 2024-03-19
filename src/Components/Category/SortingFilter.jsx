@@ -18,10 +18,11 @@ const SortingFilter = ({sortingCriteria, setSortingCriteria}) => {
           aria-label='sorting-criteria'
           name='sorting-criteria'
           value={sortingCriteria}
-          onChange={handleSortingChange}          
+          onChange={handleSortingChange} 
+                   
         >
-          <FormControlLabel value='alphabet' control={<Radio />} label='Alphabet (A-Z)' />
-          <FormControlLabel value='date' control={<Radio />} label='Latest' />
+          {/* <FormControlLabel value='alphabet' control={<Radio />} label='Alphabet (A-Z)' />
+          <FormControlLabel value='date' control={<Radio />} label='Latest' /> */}
           <FormControlLabel value='best' control={<Radio />} label='Best Selling' />
           <FormControlLabel value='price' control={<Radio />} label='Price' />
           {/* Add more sorting criteria as needed */}

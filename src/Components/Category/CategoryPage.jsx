@@ -48,7 +48,7 @@ const CategoryPage = () => {
     }
     ,[selectedProduct, products])
 
-    const [sortingCriteria, setSortingCriteria] = useState("alphabet");
+    const [sortingCriteria, setSortingCriteria] = useState("best");
     const [selectedColors, setSelectedColors] = useState([]);
     const [selectedSizes, setSelectedSizes] = useState([]);
 

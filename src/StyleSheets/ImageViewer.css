@@ -299,5 +299,20 @@
     .product_color {
         font-size: 17px;
     }
+
+    .size_selector_box {
+        width: 40px;
+        height: 35px;    
+    }
+    
+    .size_selector_box_text {
+        font-size: 15px;    
+    }
+
+    .add_to_cart {
+        width: 50%;
+        height: 45px;
+        font-size: 15px;
+    }
     
 }
