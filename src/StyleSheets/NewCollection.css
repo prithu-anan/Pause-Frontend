@@ -9,7 +9,7 @@
     justify-content: center;
     width: 98vw;
     height: 100%;
-    margin-top: 20vh;
+    margin-top: 30vh;
 }
 
 .newheading {
@@ -19,7 +19,7 @@
     justify-content: center;
     margin: 0 auto;
     width: 99vw;
-    height: 5vh;
+    height: 30vh;
 }
 
 .newcollection_image {
@@ -27,7 +27,7 @@
     justify-content: center;
     margin: 0 auto;
     width: 100%;
-    height: 60vh;
+    height: 90vh;
     filter: brightness(70%);
     z-index: 0;
 }
