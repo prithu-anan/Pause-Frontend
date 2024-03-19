@@ -13,23 +13,28 @@
 } */
 .container {
     max-width: 1600px;
+    height: auto;
+    /* min-height: auto; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 .left {
     display: flex;
-    height: 50vh;
+    flex-direction: column;
+    height: 110vh;
+    margin-left: 10vw;
 }
 .left_1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+    order: 2;
 }
 .img_wrap {
     width: 75px;
     height: 80px;
-    border: 1px solid #eee;
+    border: 1px solid #ffffff;
     cursor: pointer;
 }
 .img_wrap img {
@@ -38,15 +43,24 @@
     object-fit: contain;
 }
 
+.left_2 {
+    height: 65%;
+    width: 85%;
+    /* position: relative;
+    z-index: 1; */
+    
+}
+
 .left_2 img {
-    width: 500px;
-    height: 100%;
+    /* width: 500px; */
+    /* height: 100%; */
     object-fit: contain;
     /* position: relative;
     z-index: 2; */
+    order: 1;
 }
 .iactive {
-    border: 2px solid #e77600;
+    border: 2px solid #000000;
 }
 
 .right {
@@ -57,22 +71,31 @@
 }
 
 .product_name {
-    font-family: "'Roboto Mono' monospace";
-    font-size: 50px;
+    font-family: 'Roboto Mono' monospace;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
 .product_heading {
-    font-family: "'Roboto Mono' monospace";
-    font-size: 25px;
+    font-family: 'Roboto Mono' monospace;
+    font-size: 20px;
     /* font-weight: bold; */
     margin-bottom: 40px;
+    /* margin-right: 10px; */
+}
+
+.product_color {
+    font-family: 'Roboto Mono' monospace;
+    font-size: 20px;
+    /* font-weight: bold; */
+    /* margin-bottom: 40px; */
+    margin-right: 10px;
 }
 
 .product_price {
-    font-family: "'Roboto Mono' monospace";
-    font-size: 30px;
+    font-family: 'Roboto Mono' monospace;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 40px;
 }
@@ -127,7 +150,7 @@
 }
 
 .size_selector_box_text {
-    font-family: "'Roboto Mono' monospace";
+    font-family: 'Roboto Mono' monospace;
     font-size: 20px;
     /* font-weight: bold; */    
 }
@@ -154,7 +177,7 @@
     border-radius: 10px;
     background-color: #bad9f5;
     color: black;
-    font-family: "'Roboto Mono' monospace";
+    font-family: 'Roboto Mono' monospace;
     font-size: 23px;
     font-weight: bold;
     cursor: pointer;
@@ -173,7 +196,7 @@
     border-radius: 10px;
     background-color: #bcc0c4;
     color: black;
-    font-family: "'Roboto Mono' monospace";
+    font-family: 'Roboto Mono' monospace;
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -186,7 +209,7 @@
     border-radius: 10px;
     background-color: black;
     color: white;
-    font-family: "'Roboto Mono' monospace";
+    font-family: 'Roboto Mono' monospace;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -207,7 +230,9 @@
     .left {
         display: flex;
         flex-direction: column;
-        height: 75vh;
+        height: 70vh;
+        margin-left: 0vw;
+        margin-bottom: 20px;
     }
     .left_1 {
         display: flex;
@@ -225,6 +250,11 @@
         width: 70px;
         height: 70px;
         object-fit: contain;
+    }
+
+    .left_2 {
+        height: 100%;
+        width: 100%;
     }
     
     .left_2 img {
@@ -246,24 +276,28 @@
     }
 
     .product_name {
-        font-family: "'Roboto Mono' monospace";
-        font-size: 30px;
+        font-family: 'Roboto Mono' monospace;
+        font-size: 25px;
         font-weight: bold;
         margin-bottom: 40px;
     }
 
     .product_heading {
-        font-family: "'Roboto Mono' monospace";
-        font-size: 25px;
+        font-family: 'Roboto Mono' monospace;
+        font-size: 17px;
         /* font-weight: bold; */
         margin-bottom: 40px;
     }
     
     .product_price {
-        font-family: "'Roboto Mono' monospace";
-        font-size: 23px;
+        font-family: 'Roboto Mono' monospace;
+        font-size: 17px;
         font-weight: bold;
         margin-bottom: 40px;
+    }
+
+    .product_color {
+        font-size: 17px;
     }
     
 }

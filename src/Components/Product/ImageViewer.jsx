@@ -266,13 +266,18 @@ function ImageViewer(props) {
                     {/* <p className='product_price'>
                         {product?.price}
                     </p> */}
-                    <hr className='horizontal_rule'></hr>
-                    <p className='product_heading'>
-                        Color: {color?.name.toUpperCase()}
-                    </p>
+                    {/* <hr className='horizontal_rule'></hr> */}
+                    {/* <p className='product_heading'>
+                        Color: 
+                    </p> */}
                     <Box className='color_selector'>
                         {
                             colors?.map((color, index) => (
+                                <Box
+                                    display={'flex'}
+                                    flexDirection={'row'}
+                                >
+                                    {index == 0? <p className='product_color'>Color:</p> : null}
                                 <Box  
                                     key={index}
                                     className={index === 0 ? 'color_selector_circle active_circle' : 'color_selector_circle'}
@@ -288,15 +293,16 @@ function ImageViewer(props) {
                                 >
                                     <CircleIcon className='color_selector_circle_icon' style={{ color: color?.name }} />
                                 </Box>
+                                </Box>
                             ))
                         }
                     </Box>
                     <p className='product_heading'>
                         Size: {size?.size}
                     </p>
-                    <p className='product_heading'>
+                    {/* <p className='product_heading'>
                         In Stock: {size?.inStock}
-                    </p>
+                    </p> */}
                     <Box display={'flex'} flexDirection={'row'}>
                         <Button onClick={handleDrawerOpen}>Size Chart</Button>
                         <ChartDrawer open={drawerOpen} onClose={handleDrawerClose} />
@@ -339,7 +345,7 @@ function ImageViewer(props) {
                             )                            
                         }                         */}
                     </Box>
-                    <hr className='horizontal_rule'></hr>
+                    {/* <hr className='horizontal_rule'></hr> */}
                     <AccordionControlled description={product?.description}/>
                 </Box>
             </Box>
