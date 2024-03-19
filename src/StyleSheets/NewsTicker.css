@@ -19,7 +19,7 @@
   }
   
   .ticker-text span {
-    padding: 0 100px; /* Add spacing between news items */
+    padding: 100px 100px; /* Add spacing between news items */
   }
   
   @keyframes ticker {

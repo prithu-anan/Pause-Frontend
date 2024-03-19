@@ -314,5 +314,11 @@
         height: 45px;
         font-size: 15px;
     }
+
+    .sold_out {
+        width: 50%;
+        height: 45px;
+        font-size: 15px;
+    }
     
 }
