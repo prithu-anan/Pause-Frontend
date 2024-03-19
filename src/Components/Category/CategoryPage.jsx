@@ -24,7 +24,7 @@ const CategoryPage = () => {
             }
         }
         fetchData();
-    }, [])
+    })
 
     const [products, setProducts] = useState([]);
     const [displayedProducts, setDisplayedProducts] = React.useState([]);
@@ -41,11 +41,10 @@ const CategoryPage = () => {
             }
         }
         fetchData();
-    },[])
+    })
 
     React.useEffect(() => {
-        if(selectedProduct !== null) setDisplayedProducts([selectedProduct]);
-        else setDisplayedProducts(products);
+        setDisplayedProducts(selectedProduct == null ? products : [selectedProduct]);
     }
     ,[selectedProduct, products])
 

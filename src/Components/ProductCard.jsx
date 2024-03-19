@@ -16,8 +16,28 @@ import { Box } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 
 const ProductCard = (props) => {
+  const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const updateScreenWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', updateScreenWidth);
+
+    return () => {
+      window.removeEventListener('resize', updateScreenWidth);
+    };
+  }, []);
+
+  const cardWidth = screenWidth > 768 ? '330px' : '150px';
+  const cardHeight = screenWidth > 768 ? '600px' : 'auto';
+  const imgWidth = screenWidth > 768 ? '100%' : 'auto';
+  const imgHeight = screenWidth > 768 ? '380px' : 'auto';
+  const priceFontSize = screenWidth > 768 ? '20px' : '16px';
+  
   return (
-    <Card sx={{ width: '330px', height:600, padding: 0, maxWidth: '100%', boxShadow: 'lg',  display: 'flex', flexDirection: 'column'  }}>
+    <Card sx={{ width: cardWidth, height: cardHeight, border: 0, padding: 0, maxWidth: '100%', boxShadow: 'lg',  display: 'flex', flexDirection: 'column'  }}>
       <CardOverflow>
         {/* <AspectRatio sx={{ minWidth: 200, height: 400}}> */}
           <img
@@ -25,8 +45,9 @@ const ProductCard = (props) => {
             srcSet={props?.product?.colors[0]?.frontImage}
             loading="lazy"
             alt=""
-            width='100%'
-            height='380px'
+            width={imgWidth}
+            height={imgHeight}
+            sx={{ borderRadius: 10 }}
           />
         {/* </AspectRatio> */}
       </CardOverflow>
@@ -51,12 +72,13 @@ const ProductCard = (props) => {
       </Box>
       <Link
         href={`/product/${props?.product?._id}`}
-        fontWeight="md"
+        fontWeight='xl'
         color="neutral"
         textColor="text.primary"
         overlay
-        endDecorator={<ArrowOutwardIcon />}
+        // endDecorator={<ArrowOutwardIcon />}
         sx={{ display: 'block' }}
+        fontSize= {priceFontSize}
       >
         {props?.product?.name}
       </Link>
@@ -65,7 +87,12 @@ const ProductCard = (props) => {
         props?.product?.discount === 0 ? (
           <Typography
             level="title-lg"
-            sx={{ mt: 1, fontWeight: 'xl', textAlign: 'center', fontSize: '20px'}}
+            sx={{ 
+              mb: 5,
+              fontWeight: 'l', 
+              textAlign: 'center', 
+              fontSize: priceFontSize
+            }}
           >
             {props.product.price} BDT
           </Typography>
@@ -95,11 +122,11 @@ const ProductCard = (props) => {
       {/* <Typography level="body-sm">
         (Only <b>{props?.product?.colors[0]?.sizes[0]?.inStock}</b> left in stock!)
       </Typography> */}
-      <CardOverflow>
+      {/* <CardOverflow>
         <Button variant="solid" sx={{backgroundColor: 'black'}} component={RRLink} to={`/product/${props?.product?._id}`} size="lg">
           Add to cart
         </Button>
-      </CardOverflow>
+      </CardOverflow> */}
     </CardContent>
       {/* <CardOverflow>
         <Button variant="solid" sx={{backgroundColor: 'black'}} size="lg">

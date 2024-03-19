@@ -92,15 +92,26 @@ button.nav.default-nav[data-type="next"] svg {
       font-size: 16px; /* Adjust the font size for the button */
       bottom: 40px; /* Adjust the position of the button */
     }
+
+    button.nav.default-nav[data-type="prev"] {
+      width: 40px; /* Adjust the width of the previous button */
+      height: 40px; /* Adjust the height of the previous button */
+    }
+    
+    /* Custom styles for the next button */
+    button.nav.default-nav[data-type="next"] {
+      width: 40px; /* Adjust the width of the next button */
+      height: 40px; /* Adjust the height of the next button */
+    }
   
     /* Adjust the positions of the previous and next buttons */
     button.nav.default-nav[data-type="prev"] {
-      bottom: 20px; /* Adjust the bottom position of the previous button */
+      bottom: 50px; /* Adjust the bottom position of the previous button */
       left: 10px; /* Adjust the left position of the previous button */
     }
   
     button.nav.default-nav[data-type="next"] {
-      bottom: 20px; /* Adjust the bottom position of the next button */
+      bottom: 50px; /* Adjust the bottom position of the next button */
       right: 10px; /* Adjust the right position of the next button */
     }
 

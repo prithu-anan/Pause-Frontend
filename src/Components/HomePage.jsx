@@ -55,10 +55,11 @@ const HomePage = () => {
           <SlideShow _id={collection?._id} name={collection?.name} landscape={screenWidth > 768 ? collection?.landscape : collection?.portrait} />
           <Box
             sx={{
+              justifyContent:"space-around",
               display: 'flex',
               flexDirection: 'row',
               flexWrap: 'wrap',
-              justifyContent: 'center',
+              // justifyContent: 'center',
               alignItems: 'center',
               padding: '50px',
               gap: '30px',

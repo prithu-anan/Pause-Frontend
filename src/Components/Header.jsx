@@ -92,22 +92,6 @@ function ResponsiveAppBar() {
     }
   };
 
-  // const generateRoute = (settings) => {
-  //   switch (settings) {
-  //     case 'Account':
-  //       return `/admin/${id}`;
-  //       break;
-  //     case 'Dashboard':
-  //       return `/dashboard/${id}`;
-  //       break;
-  //     case 'Logout':
-  //       return '/';
-  //       break;
-  //     default:
-  //       console.log('/');
-  //   }
-  // }
-
   return (
     <AppBar position="sticky" sx={{ backgroundColor: 'white', padding: '5px'}} elevation={0}>
       <Container maxWidth="xl">

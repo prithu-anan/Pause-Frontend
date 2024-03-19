@@ -83,8 +83,8 @@ function App() {
           aria-label="add" 
           style={{
             position: 'fixed',
-            top: '80%',
-            right: '5%',
+            top: '91%',
+            right: '1%',
             zIndex: 20,
           }}
         >        
