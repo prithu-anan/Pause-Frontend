@@ -592,7 +592,6 @@ const ProductForm = () => {
               </Grid>              
               <Grid item xs={12} sm={3}>                
                 <TextField
-                  required={true}
                   type="file"
                   name="frontImage2"
                   variant="outlined"
@@ -694,7 +693,6 @@ const ProductForm = () => {
               </Grid>              
               <Grid item xs={12} sm={3}>                
                 <TextField
-                  required={true}
                   type="file"
                   name="backImage2"
                   variant="outlined"
