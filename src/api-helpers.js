@@ -109,8 +109,6 @@ export const getAllProducts = async() => {
     }catch(err){
         console.log(err);
     }
-
-    console.log(res.data) ;
     return res.data;
 }
 

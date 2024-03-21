@@ -13,7 +13,7 @@ function ImageViewer(props) {
     const [colors, setColors] = useState();
     const [color, setColor] = useState();
     const [images, setImages] = useState();
-    const [img, setImg] = useState();
+    const [img, setImg] = useState('');
     const [sizes, setSizes] = useState();
     const [size, setSize] = useState();
     const [available, setAvailable] = useState(false);
@@ -80,7 +80,6 @@ function ImageViewer(props) {
                 crefs.current[j].classList.remove('active_circle');
             }
         }
-        console.log(images);
     };
     const crefs = useRef([]);
     crefs.current = [];
@@ -266,8 +265,9 @@ function ImageViewer(props) {
                                 <Box
                                     display={'flex'}
                                     flexDirection={'row'}
+                                    key={index}
                                 >
-                                    {index == 0? <p className='product_color'>Color:</p> : null}
+                                    {index === 0? <p className='product_color'>Color:</p> : null}
                                 <Box  
                                     key={index}
                                     className={index === 0 ? 'color_selector_circle active_circle' : 'color_selector_circle'}
