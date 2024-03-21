@@ -8,17 +8,6 @@ import { getProductById } from '../../api-helpers';
 import ChartDrawer from './ChartDrawer';
 import { Button, Typography } from '@mui/material';
 
-// const dummyImages = [
-//     'https://lonelyghost.co/cdn/shop/files/TextMeWhenYouGetHome_FGR_Back.png?v=1698870300&width=1000',
-//     'https://lonelyghost.co/cdn/shop/files/21-hd-txt-brp-back.png?v=1698872963&width=1000',
-//     'https://lonelyghost.co/cdn/shop/files/TextMeWhenYouGetHomeHoodie_Indigo_Back.png?v=1698714739&width=1000',
-//     'https://lonelyghost.co/cdn/shop/files/23-hd-txt-tus-back.png?v=1698714739&width=1200',
-//     'https://lonelyghost.co/cdn/shop/files/22-hd-txt-saph-back.png?v=1698872924&width=1000',
-// ];
-
-
-// const allSizes = ['S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
-
 function ImageViewer(props) {
     const [product, setProduct] = useState();
     const [colors, setColors] = useState();
@@ -91,6 +80,7 @@ function ImageViewer(props) {
                 crefs.current[j].classList.remove('active_circle');
             }
         }
+        console.log(images);
     };
     const crefs = useRef([]);
     crefs.current = [];
@@ -204,10 +194,10 @@ function ImageViewer(props) {
                         <Box
                             className={i === 0 ? 'img_wrap iactive' : 'img_wrap'}
                             key={i}
-                            onClick={() => hoverHandler(image, i)}
+                            onClick={() => hoverHandler(image? image : images[(i + 2) % 4], i)}
                             ref={addRefs}
                         >
-                            <img src={image} alt="" />
+                            <img src={image? image : images[(i + 2) % 4]} alt="" />
                         </Box>
                     ))}
                 </Box>
