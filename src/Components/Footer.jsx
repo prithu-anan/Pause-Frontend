@@ -6,7 +6,9 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import AudiotrackOutlinedIcon from '@mui/icons-material/AudiotrackOutlined';
 
 const Footer = () => {
+  const [facebook, setFacebook] = useState('');
   const [instagram, setInstagram] = useState('');
+  const [tiktok, setTiktok] = useState('');
   const [emailFooter, setEmailFooter] = useState('');
   const [phoneFooter, setPhoneFooter] = useState('');
 
@@ -15,7 +17,9 @@ const Footer = () => {
       let footers;
       try {
         footers = await getFooter();
+        setFacebook(footers.facebook);
         setInstagram(footers?.instagram);
+        setTiktok(footers?.tiktok);
         setEmailFooter(footers?.email);
         setPhoneFooter(footers?.phone);
       } catch (err) {
@@ -40,9 +44,9 @@ const Footer = () => {
         </div>
         <div className="footer-section" style={{color: 'white'}}>
           <h2 style={{marginBottom: 8}}>Follow Us</h2>
-          <a href='https://www.facebook.com/' target='blank' style={{color: 'white'}}><FacebookOutlinedIcon/></a>
+          <a href={`${facebook}`} target='blank' style={{color: 'white'}}><FacebookOutlinedIcon/></a>
           <a href={`${instagram}`} target='blank' style={{color: 'white'}}><InstagramIcon/></a>          
-          <a href='https://www.tiktok.com/' target='blank' style={{color: 'white'}}><AudiotrackOutlinedIcon/></a>
+          <a href={`${tiktok}`} target='blank' style={{color: 'white'}}><AudiotrackOutlinedIcon/></a>
         </div>
         <div className="footer-section" style={{color: 'white'}}>
           <h2 style={{marginBottom: 8}}>Quick Links</h2>

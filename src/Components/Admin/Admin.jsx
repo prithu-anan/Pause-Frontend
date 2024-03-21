@@ -56,7 +56,9 @@ const Admin = (props) => {
     fetchData();
   }, []);
 
+  const [facebook, setFacebook] = useState('');
   const [instagram, setInstagram] = useState('');
+  const [tiktok, setTiktok] = useState('');
   const [emailFooter, setEmailFooter] = useState('');
   const [phoneFooter, setPhoneFooter] = useState('');
 
@@ -65,7 +67,9 @@ const Admin = (props) => {
       let footers;
       try {
         footers = await getFooter();
+        setFacebook(footers.facebook);
         setInstagram(footers.instagram);
+        setTiktok(footers.tiktok);
         setEmailFooter(footers.email);
         setPhoneFooter(footers.phone);
       } catch (err) {
@@ -104,7 +108,7 @@ const Admin = (props) => {
   };
 
   const handleFooter = async() => {
-    await editFooter({ instagram, email: emailFooter, phone: phoneFooter });
+    await editFooter({ facebook, instagram, tiktok, email: emailFooter, phone: phoneFooter });
     window.location.reload();
   };
 
@@ -211,10 +215,24 @@ const Admin = (props) => {
       <Box mt={3}>
         <Typography variant="h5" style={{ fontFamily: "'Roboto Mono', monospace"}}>Update Footer</Typography>
         <TextField
+          label="Facebook ID"
+          fullWidth
+          value={facebook}
+          onChange={(e) => setFacebook(e.target.value)}
+          margin="normal"
+        />
+        <TextField
           label="Instagram ID"
           fullWidth
           value={instagram}
           onChange={(e) => setInstagram(e.target.value)}
+          margin="normal"
+        />
+        <TextField
+          label="Tiktok ID"
+          fullWidth
+          value={tiktok}
+          onChange={(e) => setTiktok(e.target.value)}
           margin="normal"
         />
         <TextField
