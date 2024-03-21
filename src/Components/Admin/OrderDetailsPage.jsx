@@ -31,7 +31,7 @@ const OrderDetailsPage = () => {
   return (
     <Container maxWidth="md" sx={{ marginTop: 4 }}>
       <Paper elevation={3} sx={{ padding: 3 }}>
-        <Typography variant="h4" align="center" gutterBottom>
+        <Typography variant="h4" style={{ fontFamily: "'Roboto Mono', monospace" }} align="center" gutterBottom>
           Order Details
         </Typography>
 
@@ -39,7 +39,7 @@ const OrderDetailsPage = () => {
           <Divider />
         </Box>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" style={{ fontFamily: "'Roboto Mono', monospace" }} gutterBottom>
           Customer Information
         </Typography>
         <List>
@@ -58,7 +58,7 @@ const OrderDetailsPage = () => {
           <Divider />
         </Box>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" style={{ fontFamily: "'Roboto Mono', monospace" }} gutterBottom>
           Delivery Information
         </Typography>
         <List>
@@ -83,7 +83,7 @@ const OrderDetailsPage = () => {
           <Divider />
         </Box>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" style={{ fontFamily: "'Roboto Mono', monospace" }} gutterBottom>
           Transaction Details
         </Typography>
         <List>
@@ -99,7 +99,7 @@ const OrderDetailsPage = () => {
           <Divider />
         </Box>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" style={{ fontFamily: "'Roboto Mono', monospace" }} gutterBottom>
           Cart Items
         </Typography>
         <List>
@@ -113,7 +113,7 @@ const OrderDetailsPage = () => {
         </List>
       </Paper>
         <Box sx={{ textAlign: 'center', margin: 2 }}>
-            <Button component={Link} to={`/dashboard/${parsedData._id}`} variant="contained" color="primary">
+            <Button component={Link} to={`/dashboard/${parsedData._id}`} variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace" }}>
                 Go Back
             </Button>
         </Box>

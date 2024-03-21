@@ -111,7 +111,7 @@ const Admin = (props) => {
   return (
     <Container maxWidth="md">
       <Box mt={3}>
-        <Typography variant="h5">Update Email</Typography>
+        <Typography variant="h5" style={{ fontFamily: "'Roboto Mono', monospace"}}>Update Email</Typography>
         <TextField
           required={true}
           label="Email"
@@ -139,7 +139,7 @@ const Admin = (props) => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           margin="normal"
         />
-        <Button variant="contained" color="primary" style={{marginTop: 10, marginBottom: 10}} onClick={handleEmailUpdate}>
+        <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 10}} onClick={handleEmailUpdate}>
           Update
         </Button>
       </Box>
@@ -147,7 +147,7 @@ const Admin = (props) => {
       <Divider variant="middle" sx={{ my: 3 }} />
 
       <Box mt={3}>
-        <Typography variant="h5">Update Delivery Charge</Typography>
+        <Typography variant="h5" style={{ fontFamily: "'Roboto Mono', monospace"}}>Update Delivery Charge</Typography>
         <TextField
           label="Delivery Charge Inside Dhaka"
           fullWidth
@@ -164,7 +164,7 @@ const Admin = (props) => {
           onChange={(e) => setOutsideDhaka(e.target.value)}
           margin="normal"
         />
-        <Button variant="contained" color="primary" style={{marginTop: 10, marginBottom: 10}} onClick={handleDeliveryChargeUpdate}>
+        <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 10}} onClick={handleDeliveryChargeUpdate}>
           Update Delivery Charge
         </Button>
       </Box>
@@ -172,7 +172,7 @@ const Admin = (props) => {
       <Divider variant="middle" sx={{ my: 3 }} />
 
       <Box mt={3}>
-        <Typography variant="h5">Update News Headers</Typography>
+        <Typography variant="h5" style={{ fontFamily: "'Roboto Mono', monospace"}}>Update News Headers</Typography>
         <TextField
           label="Header 1"
           fullWidth
@@ -201,7 +201,7 @@ const Admin = (props) => {
           onChange={(e) => setHeader4(e.target.value)}
           margin="normal"
         />
-        <Button variant="contained" color="primary" style={{marginTop: 10, marginBottom: 10}} onClick={handleTextHeadersUpdate}>
+        <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 10}} onClick={handleTextHeadersUpdate}>
           Update News Headers
         </Button>
       </Box>
@@ -209,7 +209,7 @@ const Admin = (props) => {
       <Divider variant="middle" sx={{ my: 3 }} />
 
       <Box mt={3}>
-        <Typography variant="h5">Update Footer</Typography>
+        <Typography variant="h5" style={{ fontFamily: "'Roboto Mono', monospace"}}>Update Footer</Typography>
         <TextField
           label="Instagram ID"
           fullWidth
@@ -231,13 +231,13 @@ const Admin = (props) => {
           onChange={(e) => setPhoneFooter(e.target.value)}
           margin="normal"
         />
-        <Button variant="contained" color="primary" style={{marginTop: 10, marginBottom: 10}} onClick={handleFooter}>
+        <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 10}} onClick={handleFooter}>
           Update Footer
         </Button>
       </Box>
 
       <Box display='flex' alignContent={'center'} justifyContent={'center'}>
-        <Button variant="contained" color="primary" style={{marginTop: 10, marginBottom: 40}} component={Link} to={`/dashboard/${JSON.parse(localStorage.getItem('admin'))._id}`}>
+        <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 40}} component={Link} to={`/dashboard/${JSON.parse(localStorage.getItem('admin'))._id}`}>
           Go Back
         </Button>
       </Box>      

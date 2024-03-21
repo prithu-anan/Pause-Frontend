@@ -69,7 +69,7 @@ export default function OrderList() {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth, backgroundColor: 'aliceblue' }}
+                  style={{ fontFamily: "'Roboto Mono', monospace", minWidth: column.minWidth, backgroundColor: 'aliceblue' }}
                 >
                   {column.label}
                 </TableCell>
@@ -84,7 +84,7 @@ export default function OrderList() {
                     {columns.map((column, index) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell key={column.id} align={column.align} style={{ fontFamily: "'Roboto Mono', monospace" }}>
                             {index === 0 ? (
                             <a href={`order/${value}`} rel="noopener noreferrer">
                                 {value}
@@ -113,7 +113,7 @@ export default function OrderList() {
                               />
                             )}
                             {index === 5 && (
-                              <Button variant="contained" color="primary" onClick={() => handleButtonClick(row.id, rowIndex)}>
+                              <Button variant="contained" color="primary" onClick={() => handleButtonClick(row.id, rowIndex)} style={{ fontFamily: "'Roboto Mono', monospace" }}>
                                 Confirm
                               </Button>
                             )}

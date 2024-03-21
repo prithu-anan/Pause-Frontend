@@ -77,7 +77,7 @@ const ProductCard = (props) => {
         textColor="text.primary"
         overlay
         // endDecorator={<ArrowOutwardIcon />}
-        sx={{ display: 'block' }}
+        sx={{ fontFamily: "'Roboto Mono', monospace", display: 'block' }}
         fontSize= {priceFontSize}
       >
         {props?.product?.name}
@@ -87,7 +87,8 @@ const ProductCard = (props) => {
         props?.product?.discount === 0 ? (
           <Typography
             level="title-lg"
-            sx={{ 
+            sx={{
+              fontFamily: "'Roboto Mono', monospace", 
               mb: 5,
               fontWeight: 'l', 
               textAlign: 'center', 
@@ -101,14 +102,14 @@ const ProductCard = (props) => {
           <>
             <Typography
               level="title-lg"
-              sx={{ mt: 1, textAlign: 'center', fontSize: '20px', color: 'red', textDecoration: 'line-through'}}
+              sx={{ fontFamily: "'Roboto Mono', monospace", mt: 1, textAlign: 'center', fontSize: '20px', color: 'red', textDecoration: 'line-through'}}
             >
               {props.product.price} BDT
             </Typography>
 
             <Typography
                 level="title-lg"
-                sx={{ mt: 1, fontWeight: 'xl', textAlign: 'center', fontSize: '20px', color: 'green'}}
+                sx={{ fontFamily: "'Roboto Mono', monospace", mt: 1, fontWeight: 'xl', textAlign: 'center', fontSize: '20px', color: 'green'}}
             >
                 {((props.product.price - (props.product.price * props.product.discount / 100))).toFixed(2)} BDT
             </Typography>

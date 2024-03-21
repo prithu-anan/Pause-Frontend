@@ -36,13 +36,13 @@ const Dashboard = ({id}) => {
 
   return (
     <div className='dashboard'>        
-        <Typography variant="h3" gutterBottom style={{ textAlign: 'center'}}>
+        <Typography variant="h3" gutterBottom style={{ fontFamily: "'Roboto Mono', monospace", textAlign: 'center'}}>
             Dashboard
         </Typography>
         {shouldRenderCharts && (
             <div className='charts'>
                 <div style={{background: 'AliceBlue', padding: 50, display: 'flex', flexDirection: 'column', borderRadius: 20, width: '900px', }}>
-                    <Typography variant="h5" gutterBottom style={{ textAlign: 'center' }}>
+                    <Typography variant="h5" gutterBottom style={{ fontFamily: "'Roboto Mono', monospace", textAlign: 'center' }}>
                         Collection
                     </Typography>
                     <PieChart
@@ -57,7 +57,7 @@ const Dashboard = ({id}) => {
                 </div>
 
                 <div style={{background: 'AliceBlue', padding: 50, display: 'flex', flexDirection: 'column', borderRadius: 20, width: '900px', }}>
-                    <Typography variant="h5" gutterBottom style={{ textAlign: 'center' }}>
+                    <Typography variant="h5" gutterBottom style={{ fontFamily: "'Roboto Mono', monospace", textAlign: 'center' }}>
                         Product
                     </Typography>
                     <PieChart
@@ -74,24 +74,24 @@ const Dashboard = ({id}) => {
         )}
         <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around', marginTop: '20px' }}>
             {/* Add five buttons here */}
-            <Button variant="contained" color="primary" style={{margin: 20}} component={Link} to={`/productform/${id}`}>
+            <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", margin: 20}} component={Link} to={`/productform/${id}`}>
                 Add Product
             </Button>
-            <Button variant="contained" color="primary" style={{margin: 20}} component={Link} to={`/collectionform/${id}`}>
+            <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", margin: 20}} component={Link} to={`/collectionform/${id}`}>
                 Add Collection
             </Button>
-            <Button variant="contained" color="primary" style={{margin: 20}} component={Link} to={`/productlist/${id}`}>
+            <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", margin: 20}} component={Link} to={`/productlist/${id}`}>
                 View Products
             </Button>
-            <Button variant="contained" color="primary" style={{margin: 20}} component={Link} to={`/collectionlist/${id}`}>
+            <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", margin: 20}} component={Link} to={`/collectionlist/${id}`}>
                 View Collection
             </Button>
-            <Button variant="contained" color="primary" style={{margin: 20}} component={Link} to={`/admin/${id}`}>
+            <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", margin: 20}} component={Link} to={`/admin/${id}`}>
                 Admin Info
             </Button>
         </div>
         <div className='order-table'>
-            <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
+            <Typography variant="h4" gutterBottom style={{ fontFamily: "'Roboto Mono', monospace", textAlign: 'center' }}>
                 Orders
             </Typography>
             <OrderList />
