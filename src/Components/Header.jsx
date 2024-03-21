@@ -159,7 +159,7 @@ function ResponsiveAppBar() {
 
           {
             screenWidth <= 768 && (
-              <IconButton href='/' sx={{ mr: 4 }}>
+              <IconButton href='/' sx={{ mr: localStorage.getItem('admin') === null ? 10 : 3 }}>
                 <img src="/pause.png"
                   alt="" 
                   height="35px" 
@@ -181,7 +181,7 @@ function ResponsiveAppBar() {
 
           {
             screenWidth > 768 && (
-              <IconButton href='/' sx={{ p: 2, mr: 70 }}> 
+              <IconButton href='/' sx={{ p: 2, mr: localStorage.getItem('admin') === null ? 75 : 70 }}> 
                 <img src="/pause.png"
                   alt="" 
                   height="35px" 
