@@ -1,8 +1,11 @@
 // UpdateForm.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TextField, Button, Container, Box, Typography, Divider } from '@mui/material';
+import { Grid, InputLabel, Avatar, TextField, Button, Container, Box, Typography, Divider } from '@mui/material';
 import { editAccount, editDeliveryCharge, editFooter, getDeliveryCharge, getFooter, getHeaders, setHeaders } from '../../api-helpers';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../../firebase";
+import { v4 } from "uuid";
 
 const Admin = (props) => {
   // State for email form
@@ -38,6 +41,22 @@ const Admin = (props) => {
   const [header2, setHeader2] = useState('');
   const [header3, setHeader3] = useState('');
   const [header4, setHeader4] = useState('');
+  const [image, setImage] = useState('');
+
+  const uploadImage = async (imageUpload) => {
+    if (imageUpload == null) return;
+  
+    const imageRef = ref(storage, `images/logo/${imageUpload.name + v4()}`);
+  
+    try {
+      const snapshot = await uploadBytes(imageRef, imageUpload);
+      const url = await getDownloadURL(snapshot.ref);
+      setImage(url);
+  
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,9 +67,11 @@ const Admin = (props) => {
         setHeader2(headers.header2);
         setHeader3(headers.header3);
         setHeader4(headers.header4);
+        setImage(headers.logo);
       } catch (err) {
         console.error(err);
       }
+      console.log(headers);
     };
 
     fetchData();
@@ -103,7 +124,7 @@ const Admin = (props) => {
   };
 
   const handleTextHeadersUpdate = async() => {
-    await setHeaders({ header1, header2, header3, header4 });
+    await setHeaders({ header1, header2, header3, header4, logo: image});
     window.location.reload();
   };
 
@@ -205,6 +226,40 @@ const Admin = (props) => {
           onChange={(e) => setHeader4(e.target.value)}
           margin="normal"
         />
+        <Grid item xs={12}>
+          <InputLabel>Header Logo</InputLabel>
+          <TextField
+            type="file"
+            // label="Horizontal Image URL"
+            name="logo"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            style={{ backgroundColor: 'white' }}
+            InputProps={{
+              inputProps: {
+                accept: 'image/*', // Specify the accepted file types (e.g., images)
+              },
+            }}
+            onChange={(event) => {
+              const selectedFile = event.target.files[0];
+              if (selectedFile) {
+                uploadImage(selectedFile);
+              } else {
+                // Handle the case where the user canceled the file selection
+                const updatedImage = '';
+                setImage(updatedImage);
+                // console.log('File selection canceled.');
+              }
+            }}
+            // style={{marginBottom: 50}}
+          />
+          <Avatar
+              src={image}
+              alt="Thumbnail"
+              style={{ width: 50, height: 50, marginTop: 10, marginBottom: 50 }}
+          />
+        </Grid>
         <Button variant="contained" color="primary" style={{ fontFamily: "'Roboto Mono', monospace", marginTop: 10, marginBottom: 10}} onClick={handleTextHeadersUpdate}>
           Update News Headers
         </Button>
