@@ -148,10 +148,10 @@ function ResponsiveAppBar() {
                 color: 'black !important',
               }}
             >
-              <CollectionDrawer />
-              <CategoryDrawer />
+              <CollectionDrawer close={handleCloseNavMenu}/>
+              <CategoryDrawer close={handleCloseNavMenu}/>
               {/* <ProductDrawer /> */}
-              <Button style={{ color:'#000000', margin: 18, fontFamily: "'Roboto Mono', monospace" }} component={RRLink} to="/category">            
+              <Button style={{ color:'#000000', margin: 18, fontFamily: "'Roboto Mono', monospace" }} component={RRLink} to="/category" onClick={handleCloseNavMenu}>            
                 Products            
               </Button>
             </Menu>
@@ -171,8 +171,8 @@ function ResponsiveAppBar() {
           
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', marginBottom: 15}}}>
-            <CollectionDrawer/>
-            <CategoryDrawer/>
+            <CollectionDrawer close={handleCloseNavMenu}/>
+            <CategoryDrawer close={handleCloseNavMenu}/>
             
             <Button style={{color: scrolling? 'white' : 'black', marginTop:16, fontFamily: "'Roboto Mono', monospace"}} component={RRLink} to="/category">            
               Products            

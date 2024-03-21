@@ -13,7 +13,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 // import MailIcon from '@mui/icons-material/Mail';
 import { getAllCategories } from '../api-helpers';
 
-export default function CategoryDrawer() {
+export default function CategoryDrawer({close}) {
   const [state, setState] = React.useState({left: false, bottom: false});
   const [collections, setCollections] = React.useState([]);
 
@@ -51,6 +51,7 @@ export default function CategoryDrawer() {
     }
 
     setState({ ...state, [anchor]: open });
+    close();
   };
 
   const [scrolling, setScrolling] = React.useState(false);
