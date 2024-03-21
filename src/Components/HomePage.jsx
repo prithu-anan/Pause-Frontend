@@ -65,8 +65,10 @@ const HomePage = () => {
               gap: '30px',
             }}
           >
-            {products[collectionIndex]?.slice(0, screenWidth > 768 ? 8 : 4).map((product, productIndex) => (
-              <ProductCard key={productIndex} product={product}/>
+            {products[collectionIndex]?.slice(0, screenWidth > 768 ? 8 : 4).map((product, productIndex) => (              
+                product?.colors?.map((color, item) => {
+                  return <ProductCard key={item} item={item} product={product}/>
+                })              
             ))}
           </Box>
         </Box>

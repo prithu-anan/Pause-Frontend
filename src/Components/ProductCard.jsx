@@ -41,8 +41,8 @@ const ProductCard = (props) => {
       <CardOverflow>
         {/* <AspectRatio sx={{ minWidth: 200, height: 400}}> */}
           <img
-            src={props?.product?.colors[0]?.frontImage}
-            srcSet={props?.product?.colors[0]?.frontImage}
+            src={props?.product?.colors[props?.item]?.frontImage}
+            srcSet={props?.product?.colors[props?.item]?.frontImage}
             loading="lazy"
             alt=""
             width={imgWidth}
