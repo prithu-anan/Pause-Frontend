@@ -61,7 +61,7 @@ const HomePage = () => {
               flexWrap: 'wrap',
               // justifyContent: 'center',
               alignItems: 'center',
-              padding: '50px',
+              padding: '10px',
               gap: '10px',
             }}
           >
