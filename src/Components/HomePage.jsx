@@ -61,8 +61,8 @@ const HomePage = () => {
               flexWrap: 'wrap',
               // justifyContent: 'center',
               alignItems: 'center',
-              padding: '10px',
-              gap: '10px',
+              padding: '0px',
+              gap: '0px',
             }}
           >
             {products[collectionIndex]?.slice(0, screenWidth > 768 ? 8 : 4).map((product, productIndex) => (              
