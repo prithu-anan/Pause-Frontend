@@ -91,7 +91,7 @@ const OrderDetailsPage = () => {
             <ListItemText primary={`Transaction ID: ${order?.transactionId}`} />
           </ListItem>
           <ListItem>
-            <ListItemText primary={`Other Details: ${order?.otherDetails}`} />
+            <ListItemText primary={`Other Details: ${order?.otherDetails ? order?.otherDetails : ''}`} />
           </ListItem>
         </List>
 

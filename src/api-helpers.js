@@ -207,7 +207,7 @@ export const getPendingOrdersById = async(id) => {
         console.log(err);
     }
 
-    // console.log(res.data.pendings) ;
+    // console.log(res.data.pending) ;
     return res.data.pending;
 }
 
