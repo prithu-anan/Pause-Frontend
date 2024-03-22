@@ -124,8 +124,8 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-            //   color="inherit"
-              color='black'
+              // color="inherit"
+              color={scrolling? "inherit" : 'black'}
             >
               <MenuIcon />
             </IconButton>
@@ -159,7 +159,7 @@ function ResponsiveAppBar() {
 
           {
             screenWidth <= 768 && (
-              <IconButton href='/' sx={{ mr: localStorage.getItem('admin') === null ? 10 : 2 }}>
+              <IconButton href='/' sx={{ mr: localStorage.getItem('admin') === null ? 10 : 1 }}>
                 <img src="/pause.png"
                   alt="" 
                   height="35px" 
