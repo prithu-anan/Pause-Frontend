@@ -159,7 +159,7 @@ function ResponsiveAppBar() {
 
           {
             screenWidth <= 768 && (
-              <IconButton href='/' sx={{ mr: localStorage.getItem('admin') === null ? 10 : 3 }}>
+              <IconButton href='/' sx={{ mr: localStorage.getItem('admin') === null ? 10 : 2 }}>
                 <img src="/pause.png"
                   alt="" 
                   height="35px" 

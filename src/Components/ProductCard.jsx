@@ -30,7 +30,7 @@ const ProductCard = (props) => {
     };
   }, []);
 
-  const cardWidth = screenWidth > 768 ? '320px' : '150px';
+  const cardWidth = screenWidth > 768 ? '330px' : '140px';
   const cardHeight = screenWidth > 768 ? '600px' : '400px';
   const imgWidth = screenWidth > 768 ? '100%' : 'auto';
   const imgHeight = screenWidth > 768 ? '380px' : 'auto';
