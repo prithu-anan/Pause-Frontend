@@ -117,6 +117,7 @@
         color: white;
         font-family: 'Roboto Mono', monospace;
         z-index: 1;
+        text-align: center;
     }
     
     .newcollection_description {
