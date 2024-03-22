@@ -62,7 +62,7 @@ const HomePage = () => {
               // justifyContent: 'center',
               alignItems: 'center',
               padding: '50px',
-              gap: '30px',
+              gap: '10px',
             }}
           >
             {products[collectionIndex]?.slice(0, screenWidth > 768 ? 8 : 4).map((product, productIndex) => (              
